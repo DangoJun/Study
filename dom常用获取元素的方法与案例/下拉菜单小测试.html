@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>下拉菜单测试</title>
+    <style>
+        .title{
+            display: flex;
+            justify-content: flex-end;
+        }
+        select{
+           margin-right: 25px;
+           width: 70px;
+           text-align: center;
+           font-size: 15px;
+           border: 0;
+           color:  rgb(85, 82, 82);
+           margin-top: 10px;
+        }
+        .box{
+            margin-right: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">
+        <div class="box">
+            <select>
+                <option value="sx">微博</option>
+                <option value="pl">评论</option>
+                <option value="zan">点赞</option>
+            </select>
+            <select >
+                <option value="sx">博客</option>
+                <option value="pl">评论</option>
+                <option value="zan">点赞</option>
+            </select>
+            <select >
+                <option value="sx">邮箱</option>
+                <option value="pl">评论</option>
+                <option value="zan">点赞</option>
+            </select>
+        </div>
+    </div>
+</body>
+<script>
+    var slt = document.querySelectorAll('select')
+    slt[0].onmouseover = function(){
+        console.log('悬停')
+    }
+</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景图片</title>
+    <style>
+        body{
+            background: url(/cat1.jpg) ;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            box-sizing: border-box;
+        }
+        ul{
+            display: flex;
+            justify-content:center;
+            align-items:center;
+            margin-top: 300px;
+        }
+        li{
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="baidu">
+        <li><img src="cat1.jpg" alt="这是一只暹罗猫"></li>
+        <li><img src="cat2.jpg" alt="这是一只暹罗猫"></li>
+        <li><img src="cat3.jpg" alt="这是一只暹罗猫"></li>
+    </ul>
+</body>
+<script>
+    var imgs = document.querySelectorAll('img')
+    // 循环绑定事件
+   for(var i = 0; i < imgs.length; i++){
+    imgs[i].onclick = function(){
+        console.log(this.scr)
+    }
+   }
+</script>
+</html>

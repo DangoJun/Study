@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世纪佳缘小练习</title>
+    <style>
+        .box{
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        .inputbox{
+            width: 200px;
+            height: 30px;
+            margin-left: 20px;
+            color: #999;
+            outline:none
+        }
+        .box div{
+            margin-left: 20px;
+            color: white;
+            width: 70px;
+            background-color: skyblue;
+            text-align: center;
+            line-height: 35px;
+            font-size: 20px;
+        }
+        .change{
+            outline: none;
+            border: 1px solid rgb(247, 204, 212);
+            color: rgba (alpha 0.8);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <input class="inputbox" type="text" value="邮箱/Id/手机号">
+        <input class="inputbox" type="text" value="密码">
+        <div>登陆</div>
+    </div>
+</body>
+<script>
+    var pit = document.querySelectorAll('input')
+    pit[0].onfocus = function(){
+        this.value = ''
+        this.className = 'inputbox change'
+    }
+    pit[0].onblur = function(){
+        this.value = '邮箱/Id/手机号'
+        this.className = 'inputbox'
+    }
+    pit[1].onfocus = function(){
+       this.value = ''
+       this.className = 'inputbox change'
+    }
+    pit[1].onblur = function(){
+        this.value = '密码'
+        this.className = 'inputbox'
+    }
+
+</script>
+</html>

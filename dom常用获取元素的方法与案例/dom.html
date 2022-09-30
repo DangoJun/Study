@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom学习</title>
+    <style >
+        image{
+            width:300px;
+        }
+    </style>
+</head>
+<body>
+    <img src="cat1.jpg" alt="这是第一只猫">
+    <div>上午好</div>
+</body>
+<script>
+    // 1.获取页面元素
+     var img = document.querySelector('img')
+     var div = document.querySelector('div')
+     // 2. 获取当前的时间
+    var date = new Date();
+    var h = date.getHours();
+    // 3.判断小时数改变文字和图片的信息
+    if(h < 12){
+        img.src="cat1.jpg"
+        div.innerHTML='亲上午好，好好写代码'
+    }else if(h < 18){
+        img.src="cat2.jpg"
+        div.innerHTML='亲下午好，好好写代码'
+    }else{
+        img.src="cat3.jpg"
+        div.innerHTML='亲晚上好，好好写代码'
+    }
+
+</script>
+</html>

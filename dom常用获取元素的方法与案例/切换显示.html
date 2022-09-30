@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>切换显示</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        img{
+            width: 300px;
+        }
+        .box{
+            display: flex;
+        }
+        .box2{
+            padding-bottom: 100px;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>
+            <img src="cat1.jpg" alt="这是一只猫" id="cat" >
+        </div>
+        <div class="box2">
+            <button>点击</button>
+        </div>
+    </div>
+<script>    
+    var but = document.querySelector('button')
+    var image = document.getElementById('cat')
+    but.onclick = function(){
+        image.style.display = 'none'
+        this.style.display ='none'
+    }
+</script>
+</html>

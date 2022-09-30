@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>小案例</title>
+    <style>
+        .register{
+            display: flex;
+            justify-content:center;
+            margin-top: 50px;
+        }
+        .ipt{
+            width: 300px;
+            height: 25px;
+            margin-top: 10px;
+            border-radius: 5px;
+            color: #999;
+        }
+        .message{
+            font-size: 15px;
+            margin-left: 10px;
+            color: #999;
+        }
+        .wrong{
+            color: red;
+        }
+        .right{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="register">
+        <input type="password" class="ipt">
+        <p class="message">亲输入6-16位的密码</p>
+    </div>
+</body>
+<script>
+    //1. 获取元素
+    var ipt = document.querySelector('.ipt')
+    var message = document.querySelector('.message')
+
+    // 2.注册事件
+    ipt.onblur = function(){
+        // 根据表单里面值的长度 ipt.value.length
+        if(ipt.value.length < 6 || ipt.value.length>16){
+            console.log('错误')
+            message.className = 'message wrong'
+            message.innerHTML = '您输入的位数不对'
+        }
+        else{
+            message.className = 'message right'
+            message.innerHTML = '位数正确'
+        }
+    }
+    
+</script>
+</html>

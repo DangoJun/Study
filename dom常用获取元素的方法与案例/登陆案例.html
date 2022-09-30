@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登陆案例</title>
+    <style>
+        .box{
+            width: 400px;
+            border-bottom: 1px solid #ccc;
+            margin: 100px auto;
+            
+        }
+        .box input{
+            width: 350px;
+            height: 30px;
+            margin-top: 5px;
+            border:0 ;
+        }
+        .box div{
+            display:flex
+        }
+        .box button{
+            writing-mode:horizontal-tb
+        }
+        img{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>
+            <input type="password" name="" id="">
+            <button>切换</button>
+        </div>
+    </div>
+    <img src="cat1.jpg" alt="这是一只猫">
+</body>
+<script>
+    // 获取元素
+    var but = document.querySelector('button')
+    var input = document.querySelector('input')
+    var image = document.querySelector('img')
+    flag = 0
+    but.onclick = function(){
+        if(flag == 0){
+            input.type = 'text'
+            image.src = "cat2.jpg";
+            flag = 1;
+        }else{
+            input.type = 'password'
+            image.src = "cat1.jpg";
+            flag = 0
+        }
+    }
+</script>
+</html>

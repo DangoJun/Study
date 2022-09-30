@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tab 的切换</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+        }
+        .tab{
+            width: 800px;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+        .tab_list ul{
+            display: flex;
+            justify-content: start;
+            margin:0 auto;
+        }
+        .tab_list ul li{
+            height: 35px;
+            width:150px;
+            text-align: center;
+            align-items: center;
+            font-size: 17px;
+        }
+       .current{
+        background-color: pink;
+        color: white;
+       }
+       .item{
+        display: none;
+       }
+       .tab_content{
+        margin-top: 20px;
+       }
+    </style>
+</head>
+<body>
+    <div class="tab">
+        <div class="tab_list">
+            <ul>
+                <li class="current">商品介绍</li>
+                <li>规格包装</li>
+                <li>收获保障</li>
+                <li>商品评价(50000)</li>
+                <li>手机社区</li>
+            </ul>
+        </div>
+        <div class="tab_content">
+            <div class="item" style="display: block;">
+                商品介绍内容
+            </div>
+            <div class="item">
+                规格包装内容
+            </div>
+            <div class="item">
+                收获保障内容
+            </div>
+            <div class="item">
+                商品评价(50000)内容
+            </div>
+            <div class="item">
+                手机社区内容
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // 1通过dom 选中需要用到的元素
+    const tab_list =document.querySelector('.tab_list');
+    const lis = tab_list.querySelectorAll('li');
+    const items = document.querySelectorAll('.item')
+    // 2.循环绑定事件
+    for(let i=0;i<lis.length;i++){
+        // 给五个li设置索引号
+        lis[i].setAttribute('index',i)
+        lis[i].onclick = function(){
+            // 通过排他思想清除所有li的样式
+            for(let i =0;i<lis.length;i++){
+                lis[i].className = '';
+            }
+            // 留下自己
+            this.className = "current";
+            let index = this.getAttribute('index');
+            console.log(index);
+            // 依旧是排他思想
+            for(let i = 0; i<items.length;i++){
+                items[i].style.display = 'none';
+            }
+            items[index].style.display = 'block';
+        }
+    }
+</script>
+</html>
