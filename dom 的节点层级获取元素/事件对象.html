@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件对象</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div>123</div>
+</body>
+<script>
+    let div = document.querySelector('div')
+    div.onclick = function(event){  
+        console.log(event);
+    }
+    //1.event 就是一个时间对象，写到我们侦听函数的小括号里
+    //2.事件对象只有有了事件才会存在，他是系统自动创建的
+    //3.事件对象是事件相关数据的集合 如但钱鼠标的定位和键盘按下的按键
+    //3.这个事件对象可以自己命名
+    //4.事件对象也存在兼容问题
+</script>
+</html>

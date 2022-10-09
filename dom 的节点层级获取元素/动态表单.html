@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动态表单</title>
+    <style>
+        table{
+            margin:0 auto;
+            border-collapse:collapse;
+            margin-top: 20px;
+            text-align: center;
+            align-items: center;
+        }
+        .title{
+            background-color: #999;
+        }
+        .title th {
+            width: 100px;
+            height: 30px;
+            border: 1px solid black;
+        }
+        td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead class="title">
+            <tr>
+                <th>姓名</th>
+                <th>科目</th>
+                <th>成绩</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</body>
+<script>
+    // 1.准备号学生的数据
+    let datas = [
+        {
+        name:'张三',
+        subject:'JavaScript',
+        score:100
+    },
+    {
+        name:'李四',
+        subject:'JavaScript',
+        score:80
+    },
+    {
+        name:'王五',
+        subject:'JavaScript',
+        score:90
+    },
+    {
+        name:'赵六',
+        subject:'JavaScript',
+        score:85
+    },
+    ];
+    
+    // 2.往tabody里创建行 :有几个人就创建几行
+    let tbody = document.querySelector('tbody');
+    for(let i = 0;i<datas.length;i++){
+        // 1.创建 tr行
+      let tr = document.createElement('tr')
+        tbody.appendChild(tr);
+
+        // 2.行里面船舰单元格td 单元格的数量取决于每个对象里的个数  继续for循环
+        for(let k in datas[i]){
+            let td = document.createElement('td')
+            td.innerHTML= datas[i][k]
+            tr.appendChild(td);
+        }
+        //3. 创建有删除两个字的单元格
+            let td = document.createElement('td')
+            td.innerHTML = '<a href="javascript:;">删除</a>'
+            tr.appendChild(td);
+    }
+    // 3.绑定事件删除操作
+    let as = document.querySelectorAll('a')
+    for(let i = 0;i<as.length;i++){
+        as[i].onclick = function(){
+            tbody.removeChild(this.parentNode.parentNode)
+        }
+    }
+
+
+</script>
+</html>

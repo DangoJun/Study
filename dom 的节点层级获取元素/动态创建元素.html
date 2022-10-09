@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动态创建</title>
+    <style>
+
+    </style>
+</head>
+<body>
+        <button>点击</button>
+        <p>adc</p>
+</body>
+<script>
+    let btn = document.querySelector('button')
+    // btn.onclick = function(){
+    //     document.write('<div>123</div>');
+    // }
+    // 三种创建元素的方式区别
+    //1.document.write() 创建元素
+    // document.write('<div>123</div>');
+    //2.innerHTML 创建元素
+    let inner = document.querySelector('inner')
+    for(let i = 0;i<100;i++){
+        inner.innerHTML += '<a href="#">百度</a>'
+    }
+    //3.document.createElement() 创建元素
+    let create = document.querySelector('.create')
+    for(let i = 0;i<100;i++){
+        let a =document.createElement('a')
+        create.appendChild(a)
+    }
+
+</script>
+</html>
