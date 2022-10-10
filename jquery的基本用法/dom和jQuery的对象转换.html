@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom和jQuery的对象转换</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+<script>
+// dom 对象 转jQuery
+let mydiv  = document.querySelector('div')
+$(mydiv);  // 这样 dom对象就转换成了 jQuery对象了
+
+// jquery 转换 dom
+$('div')[0];
+$('div').get(0)
+// 以上两种方式都可以转换
+</script>
+</html>

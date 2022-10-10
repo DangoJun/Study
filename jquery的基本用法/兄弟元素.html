@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>兄弟元素</title>
+    <script src="jQuery.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+    <ol>
+        <li></li>
+        <li></li>
+        <li class="item"></li>
+        <li></li>
+        <li></li>
+    </ol>
+    <div class="current">有current</div>
+    <div>没有current</div>
+</body>
+<script>
+    //   选取同级的所有亲兄弟但不包含自身
+    $('.item').siblings('li').css('color','red');
+    // 第n个元素
+    $('ol li:eq(2)')  //  第一种
+    $('ol li').eq(2)  // 第二种
+    // 判断类名
+    $('div:first').hasClass('current')  // 如果有返回true 没有返回false
+</script>
+</html>

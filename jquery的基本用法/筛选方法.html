@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>筛选方法</title>
+    <script src="jQuery.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="nav">
+    <div class="father">
+        <div class="son">
+            <p>p</p>
+        </div>
+    </div>
+    <p>1p</p>
+</div>
+</body>
+<script>
+     $(function(){
+        //  父 parent()返回最近的一级父元素
+        console.log($('.son').parent());
+        // 子 children()
+        console.log($('.father').children());
+        console.log($('.nav').find('p'));
+     })
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猫移动</title>
+    <style>
+        img {
+            position: absolute;
+            width: 60px;
+        }
+    </style>
+</head>
+<body>
+    <img src="cat1.jpg" alt="这是暹罗猫">
+</body>
+<script>
+    const img = document.querySelector('img')
+    document.addEventListener('mousemove',function(e){
+        let x = e.pageX;
+        let y = e.pageY;
+
+        // 不要忘记加 字符串单位
+        img.style.left = -15+ x + "px"
+        img.style.top = -15+ y + "px"
+    })
+</script>
+</html>

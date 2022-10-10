@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery下拉菜单</title>
+    <script src="jQuery.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+        }
+        a{
+	    text-decoration: none; 
+	    outline: none;	
+	    color: #000;	
+        }
+        .nav{
+            display: flex;
+            justify-content: flex-end;
+            font-size: 20px;
+            margin-right: 20px;
+        }
+        .nav>li{
+            width:80px;
+            text-align: center;
+            align-items: center;
+        }
+        .nav>li>ul{
+            display: none;
+        }
+        .nav>li>ul>li{
+            border: 1px solid yellow;
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li>
+            <a href="#">微博</a>
+            <ul>
+                <li>
+                    <a href="#">私信</a>
+                </li>
+                <li>
+                    <a href="#">评论</a>
+                </li>
+                <li>
+                    <a href="#">@我</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">微博</a>
+            <ul>
+                <li>
+                    <a href="#">私信</a>
+                </li>
+                <li>
+                    <a href="#">评论</a>
+                </li>
+                <li>
+                    <a href="#">@我</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">微博</a>
+            <ul>
+                <li>
+                    <a href="#">私信</a>
+                </li>
+                <li>
+                    <a href="#">评论</a>
+                </li>
+                <li>
+                    <a href="#">@我</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">微博</a>
+            <ul>
+                <li>
+                    <a href="#">私信</a>
+                </li>
+                <li>
+                    <a href="#">评论</a>
+                </li>
+                <li>
+                    <a href="#">@我</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</body>
+<script>
+    $(function(){
+        let title = $('.nav>li');
+        //鼠标经过
+        title.mouseover(function(){
+            // show 显示元素
+        //    $(this).children('ul').css('display','block');
+           $(this).children('ul').show();
+        })
+        //  鼠标离开
+        title.mouseout(function(){
+            // hide 显示元素
+            // $(this).children('ul').css('display','none');
+           $(this).children('ul').hide();
+        })
+    })
+
+</script>
+</html>
